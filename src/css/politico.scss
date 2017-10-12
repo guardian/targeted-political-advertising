@@ -2,54 +2,59 @@
 	width: 100%;
 	max-width: 620px;
 	margin: auto;
-}
 
-.chiclet {
-	float: right;
-	margin-left: 1rem;
-}
+	.chiclet {
+		float: right;
+		margin-left: 1rem;
+	}
 
-.chiclet img {
-	max-width: 5rem;
-}
+	.chiclet img {
+		max-width: 5rem;
+	}
 
-.political-advert {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 10px;
-	border: 1px solid #625f5f;
-}
+	.political-advert {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 10px;
+		border: 1px solid #625f5f;
+	}
 
-.political-headline {
-	color: #005689;
-}
+	.political-headline {
+		color: #005689;
+	}
 
-.political-images {
-	clear: left;
-	white-space: nowrap;
-	margin-bottom: 10px;
-	overflow-x: scroll;
-	text-align: center;
-	border-bottom: 1px dotted #625f5f;
-}
+	.political-images {
+		clear: left;
+		white-space: nowrap;
+		margin-bottom: 10px;
+		overflow-x: scroll;
+		text-align: center;
+		border-bottom: 1px dotted #625f5f;
+	}
 
-.political-images img {
-	max-width: 50%;
-	display: inline;
-	max-height: 249px
-}
+	.political-images img {
+		max-width: 50%;
+		display: inline;
+		max-height: 249px
+	}
 
-.political-advert {
-	width: 100%;
-	line-height: 1.3rem;
-	margin-bottom: 20px;
-}
+	.political-images img[src*="p32x32"] { 
+		display: none;
+	}
 
-.political-targeting {
-	font-family: "Guardian Agate Sans 1 Web";
-	font-weight: 400;
-}
+	.political-advert {
+		width: 100%;
+		line-height: 1.3rem;
+		margin-bottom: 20px;
+	}
 
-.political-targeting strong span {
-	color: #005689;
+	.political-targeting {
+		font-family: "Guardian Agate Sans 1 Web";
+		font-weight: 400;
+	}
+
+	.political-targeting strong span {
+		color: #005689;
+	}
+
 }
