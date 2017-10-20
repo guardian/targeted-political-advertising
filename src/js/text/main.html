@@ -1,10 +1,31 @@
 <div class="politico-wrapper">
 
+	<div id="politico-searchbox">
+
+		<div class="inputbox-holder">
+		    <form autocomplete="off">
+		        <input id="inputbox" placeholder="Enter a search term" size="90" type="text">
+		    </form>
+		    <div id="political-search">Search</div>
+		</div>
+
+	</div>
+
+	<div id="political-message"></div>
+
 	<div id="politico-advertising">
 		
 	    <% for(var i=0; i < database.length; i++) { %>
 
-	        <div class="political-advert">
+			<% if (i == 19) { %>
+
+				<div class="political-advert infinity" data-id="<%= database[i]['id'] %>">
+
+			<% } else { %>	
+
+				<div class="political-advert" data-id="<%= database[i]['id'] %>">
+
+		    <% } %>	
 
 	        	<% if ( database[i]['thumbnail'].length > 0) { %>
 
@@ -41,6 +62,24 @@
 				<div class="political-targeting">
 
 					<div> <%- database[i]['targeting'] %> </div>
+
+				</div>
+
+				<div class="political-social">
+
+					<div class="political-block">
+
+						<div class="political-action">Share this advert</div>
+
+						<div class="political-facebook" data-id="<%- database[i]['id'] %>"></div>
+
+						<div class="political-twitter" data-id="<%- database[i]['id'] %>"></div>
+
+						<div class="political-link" data-id="<%- database[i]['id'] %>">
+							<span class="tooltiptext">Copy to clipboard</span>
+						</div>
+
+					</div>
 
 				</div>
 

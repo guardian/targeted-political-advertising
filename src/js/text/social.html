@@ -1,0 +1,47 @@
+<% for(var i=0; i < database.length; i++) { %>
+
+		<div class="political-advertorial">
+
+
+    	<% if ( database[i]['thumbnail'].length > 0) { %>
+
+				<div class="chiclet"><img src=" <%= database[i]['thumbnail'] %> "/></div>
+
+			<% } %>	
+
+        <div class="political-headline">
+            
+            <h3> <%= database[i]['title'] %> </h3>
+
+        </div>
+
+        <div class="political-content">
+            
+            <%- database[i]['message'] %>
+
+        </div>
+
+		<% if(database[i]['images'].length > 0) { %> 
+
+			<div class="political-images">
+
+			<% for(var ii=0; ii < database[i]['images'].length; ii++) { %>
+
+			<img src=" <%= database[i]['images'][ii] %> "/>
+
+			<% } %>
+
+			</div>
+
+		<% } %>					
+
+		<div class="political-targeting">
+
+			<div> <%- database[i]['targeting'] %> </div>
+
+		</div>
+
+
+    </div>
+
+<% } %>

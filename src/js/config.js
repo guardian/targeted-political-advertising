@@ -25,6 +25,7 @@ System.config({
     "bitrate": "npm:bitrate@1.0.4",
     "buffer": "github:jspm/nodelibs-buffer@0.1.1",
     "cheerio": "npm:cheerio@1.0.0-rc.2",
+    "clipboard": "npm:clipboard@1.7.1",
     "core-js": "npm:core-js@1.2.6",
     "d3": "npm:d3@4.4.0",
     "d3-svg-annotation": "npm:d3-svg-annotation@2.0.0",
@@ -41,10 +42,13 @@ System.config({
     "jquery": "npm:jquery@3.2.0",
     "jquery-touchswipe": "npm:jquery-touchswipe@1.6.15",
     "json": "github:systemjs/plugin-json@0.1.2",
+    "mark.js": "npm:mark.js@8.11.0",
     "odometer": "npm:odometer@0.4.8",
+    "popper.js": "npm:popper.js@1.12.5",
     "requests": "npm:requests@0.1.7",
     "reqwest": "github:ded/reqwest@2.0.5",
     "text": "github:systemjs/plugin-text@0.0.2",
+    "tooltip.js": "npm:tooltip.js@1.1.5",
     "turf": "npm:turf@3.0.14",
     "twemoji": "npm:twemoji@2.2.0",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -128,6 +132,11 @@ System.config({
       "lodash": "npm:lodash@4.17.4",
       "parse5": "npm:parse5@3.0.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
+    "npm:clipboard@1.7.1": {
+      "good-listener": "npm:good-listener@1.2.2",
+      "select": "npm:select@1.1.2",
+      "tiny-emitter": "npm:tiny-emitter@2.0.2"
     },
     "npm:commander@2.9.0": {
       "child_process": "github:jspm/nodelibs-child_process@0.1.0",
@@ -314,6 +323,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:good-listener@1.2.2": {
+      "delegate": "npm:delegate@3.1.3"
+    },
     "npm:graceful-readlink@1.0.1": {
       "fs": "github:jspm/nodelibs-fs@0.1.2"
     },
@@ -378,6 +390,9 @@ System.config({
       "one-time": "npm:one-time@0.0.4",
       "xhr-response": "npm:xhr-response@1.0.1",
       "xhr-status": "npm:xhr-status@1.0.0"
+    },
+    "npm:mark.js@8.11.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:monotone-convex-hull-2d@1.0.1": {
       "robust-orientation": "npm:robust-orientation@1.1.3"
@@ -456,6 +471,9 @@ System.config({
     },
     "npm:string_decoder@0.10.31": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.1"
+    },
+    "npm:tooltip.js@1.1.5": {
+      "popper.js": "npm:popper.js@1.12.5"
     },
     "npm:turf-along@3.0.12": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
