@@ -1,5 +1,7 @@
 .politico-wrapper {
 	width: 100%;
+	font-size: 100%;
+	line-height: 1.3rem;
 
     @include mq(tablet) {
         padding-left: 0px

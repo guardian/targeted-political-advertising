@@ -349,15 +349,12 @@ export class Politico {
 
 	        	var id = $(this).data('id');
 
+	        	var title = $(this).data('title');
+
 			    if ($.isNumeric(self.searchtype)) {
 
-					$( ".political-advert" ).each(function( index ) {
-
-						if ($(this).data('id')==id) {
-							y = Math.floor(index / 20)
-						}
-
-					});
+			    	y = 0;
+					z = encodeURI(title)
 
 			    } else {
 
@@ -384,19 +381,14 @@ export class Politico {
 
 	    	var id = $(this).data('id');
 
-	    	var pagelink = self.getShareUrl();
+        	var title = $(this).data('title');
 
+	    	var pagelink = self.getShareUrl();
 
 		    if ($.isNumeric(self.searchtype)) {
 
-				$( ".political-advert" ).each(function( index ) {
-
-					if ($(this).data('id')==id) {
-						y = Math.floor(index / 20)
-						z = Math.floor(index / 20)
-					}
-
-				});
+		    	y = 0;
+				z = encodeURI(title)
 
 		    } else {
 
@@ -422,18 +414,14 @@ export class Politico {
 
 		    	var id = trigger.getAttribute('data-id')
 
+		    	var title = trigger.getAttribute('data-title')
+
 		    	var pagelink = self.getShareUrl();
 
 			    if ($.isNumeric(self.searchtype)) {
 
-					$( ".political-advert" ).each(function( index ) {
-
-						if ($(this).data('id')==id) {
-							y = Math.floor(index / 20)
-							z = Math.floor(index / 20)
-						}
-
-					});
+			    	y = 0;
+					z = encodeURI(title)
 
 			    } else {
 
