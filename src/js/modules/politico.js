@@ -303,7 +303,6 @@ export class Politico {
 
 	}
 
-
 	datablaster(input=null) {
 
 	    document.getElementById("politico-advertising").innerHTML = ejs.render(searchHTML, { database: this.query });
@@ -327,6 +326,7 @@ export class Politico {
 		var isInIframe = (parent !== window);
 		var parentUrl = null;
 		var shareUrl = (isInIframe) ? document.referrer : window.location.href;
+		shareUrl = shareUrl.split('?')[0]
 		return shareUrl;
 
 	}
