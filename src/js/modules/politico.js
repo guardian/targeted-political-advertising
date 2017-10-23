@@ -22,7 +22,9 @@ export class Politico {
 
         this.database.forEach(function(item) {
 
-            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : ''
+            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : '' ;
+
+            (item['html']) ? item['link'] = self.cleanHTML(item['html']) : item['link'] = null;
 
         })
 
@@ -92,7 +94,9 @@ export class Politico {
 
         this.query.forEach(function(item) {
 
-            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : ''
+            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : '' ;
+
+            (item['html']) ? item['link'] = self.cleanHTML(item['html']) : item['link'] = null;
 
         })
 
@@ -104,6 +108,29 @@ export class Politico {
 
 		self.social()
 
+
+    }
+
+    cleanHTML(html) {
+
+		var self = this
+
+	    let $ = cheerio.load(html, { normalizeWhitespace: true });
+
+		var links = $('a');
+
+		var urls = []
+
+		$(links).each(function(i, link){
+
+			let url = $(link).attr('href')
+			if (url && url.indexOf('https://www.facebook.com/') !== -1) {
+				urls.push(url)
+			}
+			
+		});
+
+		return (urls.length > 0) ? urls[0] : null ;
 
     }
 
@@ -183,7 +210,27 @@ export class Politico {
 	        }
 
 	    });
-	    
+
+		$('input').keydown( function( event ) {
+
+		    if ( event.which === 13 ) {
+
+				var input = document.getElementById("inputbox").value;
+
+		        if (input && input.length > 2) {
+
+		        	$("#political-message").html("");
+
+		        	self.searchapi(input)
+
+		        }
+
+		        event.preventDefault();
+		        return false;
+		    }
+		});
+
+    
 	}
 
 	searchapi(input) {
@@ -199,6 +246,8 @@ export class Politico {
 		  	crossOrigin: true,
 		  	success: (resp) =>  { 
 
+		  		console.log(resp)
+
 		  		if (resp.ads.length > 0) {
 
 			  		self.query = resp.ads
@@ -207,7 +256,9 @@ export class Politico {
 
 			        self.query.forEach(function(item) {
 
-			            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : ''
+			            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : '' ;
+
+			            (item['html']) ? item['link'] = self.cleanHTML(item['html']) : item['link'] = null;
 
 			        })
 
@@ -283,7 +334,9 @@ export class Politico {
 
 			        datum.forEach(function(item) {
 
-			            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : ''
+			            (item['targeting']) ? item['targeting'] = self.cleanTargeting(item['targeting'], item['title']) : '' ;
+
+			            (item['html']) ? item['link'] = self.cleanHTML(item['html']) : item['link'] = null;
 
 			        })
 

@@ -34,8 +34,16 @@
       			<% } %>	
 
 	            <div class="political-headline">
-	                
-	                <h3> <%= database[i]['title'] %> </h3>
+
+					<% if (database[i]['link']!=null) { %>
+
+						<a target="_blank" href="<%= database[i]['link'] %>"><h3> <%= database[i]['title'] %> </h3></a>
+
+					<% } else { %>	
+
+						<h3> <%= database[i]['title'] %> </h3>
+
+				    <% } %>	
 
 	            </div>
 
